@@ -274,9 +274,7 @@ export default class Calendar extends React.Component {
       [0, 1, 2, 3, 4, 5, 6].map(offset => {
         const day = addDays(cloneDate(startOfWeek), offset);
         const localeData = getLocaleData(day);
-        const weekDayName = this.props.useWeekdaysShort
-          ? getWeekdayShortInLocale(localeData, day)
-          : getWeekdayMinInLocale(localeData, day);
+        const weekDayName = getWeekdayShortInLocale(localeData, day).toUpperCase();
         return (
           <div key={offset} className="react-datepicker__day-name">
             {weekDayName}

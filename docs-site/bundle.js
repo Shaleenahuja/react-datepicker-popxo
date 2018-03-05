@@ -71278,7 +71278,13 @@
               "aria-label": "day-" + (0, _date_utils.getDate)(this.props.day),
               role: "option"
             },
-            (0, _date_utils.getDate)(this.props.day)
+            React.createElement(
+              "div",
+              {
+                className: "datepicker__day--position"
+              },
+              (0, _date_utils.getDate)(this.props.day)
+            )
           );
         };
 
@@ -74604,7 +74610,8 @@
                 ? "height"
                 : "width";
               var mergeWithPrevious = false;
-              return (op
+              return (
+                op
                   // This aggregates any `+` or `-` sign that aren't considered operators
                   // e.g.: 10 + +5 => [10, +, +5]
                   .reduce(function(a, b) {
@@ -74631,7 +74638,8 @@
                       popperOffsets,
                       referenceOffsets
                     );
-                  }) );
+                  })
+              );
             });
 
             // Loop trough the offsets arrays and execute the operations
